@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> 쇼핑몰 CRUD 로그인</title> 
+    <meta charset="utf-8"/>
+    <meta authors="장미루 김경민"> 
+    <meta copyright="쇼핑몰 회원 관리를 위한 CRUD 프로젝트 과제를 위해 제작된 페이지">
+    <script type="text/javascript">
+        
+    </script>
+    
+    <style type = "text/css">
+              
+    </style>
+</head>
+<body>
+    <h3>쇼핑몰 회원 관리를 위한 CRUD 프로젝트</h3>
+    <div>
+        <form>
+        <fieldset>
+            <legend align="center">회원 로그인</legend>
+            <table align="center">
+                <tr>
+                    <td>아이디</td>
+                    <td><input id="userid" type="text"/></td>
+                    <td rowspan="2" align = "center"><input id="login_button" type="submit" value="로그인"></td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td><input id="password" type="password"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td  align="right">아이디/비번찾기</td>
+                    <td>회원가입</td>
+                </tr>
+            </table>
+        </fieldset>
+        </form>
+    </div>
+    <div>
+        <form>
+        <fieldset>
+            <legend align="center">회원 가입</legend>
+            <table align="center">
+                <tr>
+                    <td>이름</td>
+                    <td><input id="username" type="text"/></td>
+                </tr>
+                <tr>
+                    <td>아이디</td>
+                    <td><input id="userid" type="text"/></td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td><input id="password" type="password"/></td>
+                </tr>
+                <tr>
+                    <td>전화번호</td>
+                    <td><input id="userphone" type="text"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td  align="right"><input id="register" type="submit" value="회원가입"></td>
+                </tr>
+            </table>
+        </fieldset>
+        </form>
+    </div>
+    <div>
+        <fieldset>
+            <legend align="center">회원 정보</legend>
+            <table align="center">
+                <tr>
+                    <td>이름</td>
+                    <td>이름 정보</td>
+                </tr>
+                <tr>
+                    <td>아이디</td>
+                    <td>아이디 정보</td>
+                </tr>
+                <tr>
+                    <td><button id="editmine" type="button">회원 탈퇴</button></td>
+                    <td  align="right"><button id="editmine" type="button">회원 정보 수정</button></td>
+                </tr>
+            </table>
+        </fieldset>
+    </div>
+    <div>
+        
+    </div>
+</body>
+</html>
