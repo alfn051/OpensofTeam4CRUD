@@ -48,16 +48,17 @@
                     <td><input id="username" type="text"/></td>
                 </tr>
                 <tr>
+                    <td>전화번호</td>
+                    <td><input id="userphone" type="text"/></td>
+                </tr>
+                <tr><br></tr>
+                <tr>
                     <td>아이디</td>
                     <td><input id="userid" type="text"/></td>
                 </tr>
                 <tr>
                     <td>비밀번호</td>
                     <td><input id="password" type="password"/></td>
-                </tr>
-                <tr>
-                    <td>전화번호</td>
-                    <td><input id="userphone" type="text"/></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -68,6 +69,7 @@
         </form>
     </div>
     <div>
+        <form>
         <fieldset>
             <legend align="center">회원 정보</legend>
             <table align="center">
@@ -76,8 +78,16 @@
                     <td>이름 정보</td>
                 </tr>
                 <tr>
+                    <td>전화번호</td>
+                    <td>전화번호 정보</td>
+                </tr>
+                <tr>
                     <td>아이디</td>
                     <td>아이디 정보</td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td>비밀번호 정보</td>
                 </tr>
                 <tr>
                     <td><button id="editmine" type="button">회원 탈퇴</button></td>
@@ -85,9 +95,22 @@
                 </tr>
             </table>
         </fieldset>
+        </form>
     </div>
     <div>
-        
+        <fieldset>
+            <legend align="center">회원 관리 목록(admin)</legend>
+            <table align="center">
+                <tr>
+                    <td>(돔 예시) 1. </td>
+                    <td>이름</td>
+                    <td>전화번호</td>
+                    <td>아이디</td>
+                    <td>비밀번호</td>
+                    <td><button>수정(Update)</button> <button>삭제(Delete)</button></td>
+                </tr>
+            </table>
+        </fieldset>
     </div>
 </body>
 </html>
