@@ -6,7 +6,7 @@ var editstate = true; //관리자 목록회원수정-true, 회원정보수정-fa
 
 
 function onRegiSubmit() {
-    var formData = readFormData();
+    var formData = readRegiData();
     insertNewRecord(formData);
     /*
     if (validate()) {
@@ -19,13 +19,22 @@ function onRegiSubmit() {
     } */
 }
 
-function readFormData() {
+function readRegiData() {
     var formData = {};
     formData["userid"] = document.getElementById("newid").value;
     formData["userpw"] = document.getElementById("newpw").value;
     formData["username"] = document.getElementById("newname").value;
     formData["userphone"] = document.getElementById("newphone").value;
     formData["userdate"] = document.getElementById("newdate").value;
+    return formData;
+}
+function readInfoData() {
+    var formData = {};
+    formData["userid"] = document.getElementById("userid").value;
+    formData["userpw"] = document.getElementById("userpw").value;
+    formData["username"] = document.getElementById("username").value;
+    formData["userphone"] = document.getElementById("userphone").value;
+    formData["userdate"] = document.getElementById("userdate").value;
     return formData;
 }
 
@@ -56,23 +65,25 @@ function resetForm() {
     selectedRow = null;
 }
 
-function onInfoSubmit(td) {
-    if(editstate==true){
-        selectedRow = td.parentElement.parentElement;
-        document.getElementById("userid").value = selectedRow.cells[0].innerHTML;
-        document.getElementById("userpw").value = selectedRow.cells[1].innerHTML;
-        document.getElementById("username").value = selectedRow.cells[2].innerHTML;
-        document.getElementById("userphone").value = selectedRow.cells[3].innerHTML;
-        document.getElementById("userdate").value = selectedRow.cells[4].innerHTML;
-    }else{}
-    
+function onEdit(td) {
+    selectedRow = td.parentElement.parentElement;
+    document.getElementById("userid").value = selectedRow.cells[0].innerHTML;
+    document.getElementById("userpw").value = selectedRow.cells[1].innerHTML;
+    document.getElementById("username").value = selectedRow.cells[2].innerHTML;
+    document.getElementById("userphone").value = selectedRow.cells[3].innerHTML;
+    document.getElementById("userdate").value = selectedRow.cells[4].innerHTML;
 }
-function updateRecord(formData) {
-    selectedRow.cells[0].innerHTML = formData.userid;
-    selectedRow.cells[1].innerHTML = formData.userpw;
-    selectedRow.cells[2].innerHTML = formData.username;
-    selectedRow.cells[3].innerHTML = formData.userphone;
-    selectedRow.cells[4].innerHTML = formData.userdate;
+function onInfoSubmit(formData) {
+    var formData = readInfoData();
+    if(editstate==true){
+        selectedRow.cells[0].innerHTML = formData.userid;
+        selectedRow.cells[1].innerHTML = formData.userpw;
+        selectedRow.cells[2].innerHTML = formData.username;
+        selectedRow.cells[3].innerHTML = formData.userphone;
+        selectedRow.cells[4].innerHTML = formData.userdate;
+    }else{
+
+    }
 }
 
 function onDelete(td) {
@@ -111,5 +122,5 @@ function onLoginSubmit() {
 
 }
 function logout(){
-
+    
 }
