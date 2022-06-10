@@ -1,4 +1,9 @@
-var selectedRow = null
+var selectedRow = null;
+var editstate = true; //관리자 목록회원수정-true, 회원정보수정-false / 추후 로그인기능 추가후 기본값 false
+
+
+
+
 
 function onRegiSubmit() {
     var formData = readFormData();
@@ -51,13 +56,16 @@ function resetForm() {
     selectedRow = null;
 }
 
-function onEdit(td) {
-    selectedRow = td.parentElement.parentElement;
-    document.getElementById("userid").value = selectedRow.cells[0].innerHTML;
-    document.getElementById("userpw").value = selectedRow.cells[1].innerHTML;
-    document.getElementById("username").value = selectedRow.cells[2].innerHTML;
-    document.getElementById("userphone").value = selectedRow.cells[3].innerHTML;
-    document.getElementById("userdate").value = selectedRow.cells[4].innerHTML;
+function onInfoSubmit(td) {
+    if(editstate==true){
+        selectedRow = td.parentElement.parentElement;
+        document.getElementById("userid").value = selectedRow.cells[0].innerHTML;
+        document.getElementById("userpw").value = selectedRow.cells[1].innerHTML;
+        document.getElementById("username").value = selectedRow.cells[2].innerHTML;
+        document.getElementById("userphone").value = selectedRow.cells[3].innerHTML;
+        document.getElementById("userdate").value = selectedRow.cells[4].innerHTML;
+    }else{}
+    
 }
 function updateRecord(formData) {
     selectedRow.cells[0].innerHTML = formData.userid;
@@ -68,7 +76,7 @@ function updateRecord(formData) {
 }
 
 function onDelete(td) {
-    if (confirm('Are you sure to delete this record ?')) {
+    if (confirm('정말로 이 회원을 삭제하시겠습니까? ?')) {
         row = td.parentElement.parentElement;
         document.getElementById("adminList").deleteRow(row.rowIndex);
         resetForm();
@@ -85,4 +93,23 @@ function validate() {
             document.getElementById("fullNameValidationError").classList.add("hide");
     }
     return isValid;
+}
+
+function moveLogin(){
+
+}
+
+function moveRegister(){
+
+}
+
+function onAdmin(){
+
+}
+
+function onLoginSubmit() {
+
+}
+function logout(){
+
 }
