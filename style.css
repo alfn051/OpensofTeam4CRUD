@@ -19,8 +19,22 @@ table {
     margin-right: auto;
 }
 
+legend {
+background-color:gray;
+color:white;
+text-align: inherit;
+border-radius: 5px;
+}
+
+fieldset {
+    background-color :rgb(255, 255, 255)
+}
+
 table, td, th {
     border-collapse: collapse;
     
 }
 
+#adminList {
+    border-collapse: separate;
+}
