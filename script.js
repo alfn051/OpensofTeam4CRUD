@@ -137,7 +137,7 @@ function onInfoSubmit() {
         localStorage.setItem('member', JSON.stringify(member)); //로컬스토리지에 member배열 저장
         insertTable();
     }else{
-        //배열에서 수정기능
+        // 자기정보 수정기능
     }
 
 }
@@ -145,9 +145,12 @@ function onInfoSubmit() {
 function onDelete(td) {
     if (confirm('정말로 이 회원을 삭제하시겠습니까? ?')) {
         row = td.parentElement.parentElement;
+        console.log(row.rowIndex);
+        member.splice(row.rowIndex -1 , 1); //배열에서 삭제기능
+        localStorage.setItem('member', JSON.stringify(member)); //로컬스토리지에 member배열 저장
         document.getElementById("adminList").deleteRow(row.rowIndex);
-        resetForm();
-        //배열에서 삭제기능
+        insertTable();
+        resetForm();       
     }
 }
 
