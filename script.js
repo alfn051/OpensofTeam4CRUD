@@ -206,6 +206,10 @@ function moveRegister(){
 }
 
 function onAdmin(){
-    document.getElementById("listTab").style.display = "";
-    insertTable();
+    var adpw = prompt("관리자 비밀번호를 입력하세요.", "최초비밀번호: admin")
+    if(adpw == "admin"){
+        document.getElementById("listTab").style.display = "";
+        insertTable();
+    }
+
 }
