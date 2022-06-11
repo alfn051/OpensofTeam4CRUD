@@ -149,6 +149,7 @@ function resetForm() {
 }
 
 function onEdit(td) {
+    editstate=true
     selectedRow = td.parentElement.parentElement;
     document.getElementById("userid").value = selectedRow.cells[1].innerHTML;
     document.getElementById("userpw").value = selectedRow.cells[2].innerHTML;
@@ -158,29 +159,32 @@ function onEdit(td) {
 }
 function onInfoSubmit() {
     var formData = readInfoData();
-    if(editstate==true){
-        num=(selectedRow.cells[0].innerHTML)-1;
-        member[num]['userid'] = formData.userid;
-        member[num]['userpw'] = formData.userpw;
-        member[num]['username'] = formData.username;
-        member[num]['userphone'] = formData.userphone;
-        member[num]['userdate'] = formData.userdate;
-        localStorage.setItem('member', JSON.stringify(member)); //로컬스토리지에 member배열 저장
-        insertTable();
-    }else{
-        member[loginstate]['userid'] = formData.userid;
-        member[loginstate]['userpw'] = formData.userpw;
-        member[loginstate]['username'] = formData.username;
-        member[loginstate]['userphone'] = formData.userphone;
-        member[loginstate]['userdate'] = formData.userdate;
-        localStorage.setItem('member', JSON.stringify(member)); //로컬스토리지에 member배열 저장
-        insertTable();
+    if (confirm('정말로 수정 하시겠습니까?')){
+        if(editstate==true){
+            num=(selectedRow.cells[0].innerHTML)-1;
+            member[num]['userid'] = formData.userid;
+            member[num]['userpw'] = formData.userpw;
+            member[num]['username'] = formData.username;
+            member[num]['userphone'] = formData.userphone;
+            member[num]['userdate'] = formData.userdate;
+            localStorage.setItem('member', JSON.stringify(member)); //로컬스토리지에 member배열 저장
+            insertTable();
+        }else{
+            member[loginstate]['userid'] = formData.userid;
+            member[loginstate]['userpw'] = formData.userpw;
+            member[loginstate]['username'] = formData.username;
+            member[loginstate]['userphone'] = formData.userphone;
+            member[loginstate]['userdate'] = formData.userdate;
+            localStorage.setItem('member', JSON.stringify(member)); //로컬스토리지에 member배열 저장
+            insertTable();
+        }
+    
     }
-
+    
 }
 
 function onDelete(td) {
-    if (confirm('정말로 이 회원을 삭제하시겠습니까? ?')) {
+    if (confirm('정말로 이 회원을 삭제하시겠습니까?')) {
         row = td.parentElement.parentElement;
         console.log(row.rowIndex);
         member.splice(row.rowIndex -1 , 1); //배열에서 삭제기능
@@ -204,5 +208,4 @@ function moveRegister(){
 function onAdmin(){
     document.getElementById("listTab").style.display = "";
     insertTable();
-    editstate=true
 }

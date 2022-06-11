@@ -19,8 +19,7 @@ table {
     margin-right: auto;
 }
 
-/* 커서 관련 */
-button, #form-action-buttons, #login_button, #tdregis, #regisub{
+button, a, #form-action-buttons, #login_button, #tdregis, #regisub{
     cursor: pointer;
 }
 #regicans, #regiregi, #newdate, #userdate{
