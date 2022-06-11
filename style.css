@@ -19,6 +19,10 @@ table {
     margin-right: auto;
 }
 
+button, #form-action-buttons, #login_button, #tdregis, #regisub{
+    cursor: pointer;
+}
+
 legend {
 background-color:gray;
 color:white;
@@ -27,7 +31,15 @@ border-radius: 5px;
 }
 
 fieldset {
-    background-color :rgb(255, 255, 255)
+    background-color :rgb(255, 255, 255);
+    
+    width: 23%;
+    margin-left: auto;
+    margin-right: auto;
+    
+    margin-bottom: 20px;
+
+
 }
 
 table, td, th {
@@ -36,5 +48,10 @@ table, td, th {
 }
 
 #adminList {
-    border-collapse: separate;
+    border-collapse: collapse;
+}
+
+#adminfield {
+    width: 50%;
+    margin:auto;
 }
