@@ -13,7 +13,7 @@ body {
 }
 
 table {
-    text-align: center;
+    text-align: left;
     width: auto;
     margin-left: auto;
     margin-right: auto;
@@ -29,6 +29,7 @@ button, a, #form-action-buttons, #login_button, #tdregis, #regisub{
     text-decoration: underline;
 }
 
+/* 박스 */
 legend {
 background-color:gray;
 color:white;
@@ -39,41 +40,44 @@ border-radius: 5px;
 fieldset {
     background-color :rgb(255, 255, 255);
     
-    width: 23%;
+    width: 40%;
     margin-left: auto;
     margin-right: auto;
-    
-    margin-bottom: 20px;
-
 
 }
-
+/* 테이블 */
 table, td, th {
     border-collapse: collapse;
     
 }
 
 #adminList {
+    width : 100%;
     border-collapse: collapse;
 }
 
 #adminfield {
-    width: 50%;
+    width: 70%;
     margin:auto;
 }
 
 #loginTab {
-    width: 1440px;
+    width: 1080px;
+    margin: auto;
 }
 #regiTab {
-    width: 1440px;
+    width: 1080px;
+    margin: auto;
 }
 #infoTab {
-    width: 1440px;
+    width: 1080px;
+    margin: auto;
 }
 #listTab {
-    width: 1440px;
+    width: 1080px;
+    margin: auto;
 }
 h2 {
-    width: 1440px;
+    width: 1080px;
+    margin: auto;
 }
