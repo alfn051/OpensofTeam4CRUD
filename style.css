@@ -61,3 +61,19 @@ table, td, th {
     width: 50%;
     margin:auto;
 }
+
+#loginTab {
+    width: 1440px;
+}
+#regiTab {
+    width: 1440px;
+}
+#infoTab {
+    width: 1440px;
+}
+#listTab {
+    width: 1440px;
+}
+h2 {
+    width: 1440px;
+}
