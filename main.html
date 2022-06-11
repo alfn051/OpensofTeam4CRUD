@@ -27,7 +27,7 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td  align="right"><a onclick="moveRegister()">회원가입</a></td>
+                    <td  align="right" id = "tdregis"><a onclick="moveRegister()">회원가입</a></td>
                     <td></td>
                 </tr>
             </table>
@@ -61,7 +61,7 @@
                 <input type="date" id="newdate" name="newdate">
             </div>
             <div  class="form-action-buttons">
-                <input type="submit" value="회원가입"><input type="reset" value="취소" onclick="moveLogin()">
+                <input type="submit" id = "regiregi" value="회원가입"><input type="reset" id ="regicans" value="취소" onclick="moveLogin()">
             </div>
         </fieldset>
         </form>
@@ -93,7 +93,7 @@
                 <input type="date" id="userdate" name="userdate">
             </div>
             <div  class="form-action-buttons">
-                <input type="submit" value="수정">
+                <input type="submit" id ="regisub"value="수정">
             </div>
         </fieldset>
         </form>
@@ -101,9 +101,9 @@
     </div>
 <!--관리자 회원목록 창-->   
     <div class="listTab" id="listTab" >
-        <fieldset>
+        <fieldset id = "adminfield">
             <legend align="center">회원 관리 목록(admin)</legend>
-            <table class="list" id="adminList" border="1px solid">
+            <table class="list" id="adminList" border="thin solid">
                 <thead>    
                     <tr>
                         <td>순번</td>
