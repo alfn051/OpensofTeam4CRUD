@@ -6,16 +6,17 @@ var loginstate = -1;
 var member = []; //회원 배열, 헷갈림 주의!
 loginstate = sessionStorage.getItem('login');//로그인 상태 세션에서 불러오기
 
-if(localStorage.length>0){ //로컬스토리지에 저장된 배열이 있으면 불러오기
-    member = JSON.parse(localStorage.getItem('member')); 
+window.onload = function(){
+    if(localStorage.length>0){ //로컬스토리지에 저장된 배열이 있으면 불러오기
+        member = JSON.parse(localStorage.getItem('member')); 
+    }
+    
+    if(loginstate>=0){
+        console.log(loginstate+"자동로그인 실행됨")
+        moveInfo(); //이게 왜 오류가 나냐고 계속 왜
+    }
+    insertTable();
 }
-
-if(loginstate>=0){
-    console.log(loginstate+"자동로그인 실행됨")
-    moveInfo(); //이게 왜 오류가 나냐고 계속 왜
-}
-insertTable();
-console.log("아아")
 
 function onLoginSubmit() {
     var form = document.loginform;
