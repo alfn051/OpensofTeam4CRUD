@@ -1,0 +1,26 @@
+html {
+/*background-image: url(bg.jpg);
+-webkit-background-size : cover;
+-moz-background-size : cover;
+-o-background-size : cover;
+background-size: cover;
+일단 끝나고 나면 배경 넣고 설정 할 예정
+*/
+}
+
+body {
+    text-align: center;
+}
+
+table {
+    text-align: center;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table, td, th {
+    border-collapse: collapse;
+    
+}
+
