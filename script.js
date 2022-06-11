@@ -140,11 +140,13 @@ function insertNewRecord(data) {
 }
 
 function resetForm() {
+    
     document.getElementById("userid").value = "";
     document.getElementById("userpw").value = "";
     document.getElementById("username").value = "";
     document.getElementById("userphone").value = "";
     document.getElementById("userdate").value = "";
+    
     selectedRow = null;
 }
 
