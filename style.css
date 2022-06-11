@@ -22,6 +22,12 @@ table {
 button, #form-action-buttons, #login_button, #tdregis, #regisub{
     cursor: pointer;
 }
+#regicans, #regiregi, #newdate, #userdate{
+    cursor: pointer;
+}
+#tdregis {
+    text-decoration: underline;
+}
 
 legend {
 background-color:gray;
