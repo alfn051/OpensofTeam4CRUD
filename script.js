@@ -2,7 +2,7 @@ var selectedRow = null;
 var editstate = false; //관리자 목록회원수정-true, 회원정보수정-false 
 var localStorage = window.localStorage;
 var sessionStorage = window.sessionStorage;
-var loginstate = -1;
+var loginstate = null;
 var member = []; //회원 배열, 헷갈림 주의!
 loginstate = sessionStorage.getItem('login');//로그인 상태 세션에서 불러오기
 
@@ -15,8 +15,10 @@ window.onload = function(){
     document.getElementById("regiTab").style.display = "none";
     document.getElementById("infoTab").style.display = "none";
     document.getElementById("listTab").style.display = "none";
-    
-    if(loginstate>=0){
+
+    if(!loginstate){
+        console.log("자동로그인 안됨")
+    }else if(loginstate>=0){
         console.log("id number = "+loginstate+" 자동로그인 실행됨")
         moveInfo(); //이게 왜 오류가 나냐고 계속 왜 <- 고쳤다
     }
@@ -63,7 +65,7 @@ function moveInfo(){
 }
 
 function logout(){
-    loginstate=-1;
+    loginstate=null;
     sessionStorage.setItem('login',loginstate);
     document.getElementById("loginTab").style.display = "";
     document.getElementById("infoTab").style.display = "none";
