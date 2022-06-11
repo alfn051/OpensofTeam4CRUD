@@ -11,15 +11,17 @@ window.onload = function(){
         member = JSON.parse(localStorage.getItem('member')); 
     }
     
-    if(loginstate>=0){
-        console.log(loginstate+"자동로그인 실행됨")
-        moveInfo(); //이게 왜 오류가 나냐고 계속 왜 <- 고쳤다
-    }
-    insertTable();
     document.getElementById("loginTab").style.display = "";
     document.getElementById("regiTab").style.display = "none";
     document.getElementById("infoTab").style.display = "none";
     document.getElementById("listTab").style.display = "none";
+    
+    if(loginstate>=0){
+        console.log("id number = "+loginstate+" 자동로그인 실행됨")
+        moveInfo(); //이게 왜 오류가 나냐고 계속 왜 <- 고쳤다
+    }
+    insertTable();
+    
 }
 
 function onLoginSubmit() {
@@ -49,6 +51,8 @@ function onLoginSubmit() {
 }
 
 function moveInfo(){
+    document.getElementById("loginTab").style.display = "none";
+    document.getElementById("infoTab").style.display = "";
     var form = document.infoform;
     form.userid.value=member[loginstate]['userid'];
     form.userpw.value=member[loginstate]['userpw'];
@@ -56,8 +60,6 @@ function moveInfo(){
     form.userphone.value=member[loginstate]['userphone'];
     form.userdate.value=member[loginstate]['userdate'];
     editstate=false;
-    document.getElementById("loginTab").style.display = "none";
-    document.getElementById("infoTab").style.display = "";
 }
 
 function logout(){
@@ -71,6 +73,7 @@ function logout(){
 function onRegiSubmit() {
     var formData = readRegiData();
     insertNewRecord(formData);
+    location.reload();
 }
 
 function readRegiData() {
