@@ -145,9 +145,10 @@ function onInfoSubmit() {
 function onDelete(td) {
     if (confirm('정말로 이 회원을 삭제하시겠습니까? ?')) {
         row = td.parentElement.parentElement;
-        document.getElementById("adminList").deleteRow(row.rowIndex);
-        member.splice(row.rowIndex , 1); //배열에서 삭제기능
+        console.log(row.rowIndex);
+        member.splice(row.rowIndex -1 , 1); //배열에서 삭제기능
         localStorage.setItem('member', JSON.stringify(member)); //로컬스토리지에 member배열 저장
+        document.getElementById("adminList").deleteRow(row.rowIndex);
         insertTable();
         resetForm();       
     }
