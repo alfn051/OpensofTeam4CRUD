@@ -13,7 +13,7 @@ window.onload = function(){
     
     if(loginstate>=0){
         console.log(loginstate+"자동로그인 실행됨")
-        moveInfo(); //이게 왜 오류가 나냐고 계속 왜
+        moveInfo(); //이게 왜 오류가 나냐고 계속 왜 <- 고쳤다
     }
     insertTable();
 }
@@ -57,6 +57,7 @@ function moveInfo(){
 function logout(){
     loginstate=-1;
     sessionStorage.setItem('login',loginstate);
+    location.reload();
 }
 
 function onRegiSubmit() {
