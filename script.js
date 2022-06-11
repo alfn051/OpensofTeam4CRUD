@@ -16,6 +16,10 @@ window.onload = function(){
         moveInfo(); //이게 왜 오류가 나냐고 계속 왜 <- 고쳤다
     }
     insertTable();
+    document.getElementById("loginTab").style.display = "";
+    document.getElementById("regiTab").style.display = "none";
+    document.getElementById("infoTab").style.display = "none";
+    document.getElementById("listTab").style.display = "none";
 }
 
 function onLoginSubmit() {
@@ -52,11 +56,15 @@ function moveInfo(){
     form.userphone.value=member[loginstate]['userphone'];
     form.userdate.value=member[loginstate]['userdate'];
     editstate=false;
+    document.getElementById("loginTab").style.display = "none";
+    document.getElementById("infoTab").style.display = "";
 }
 
 function logout(){
     loginstate=-1;
     sessionStorage.setItem('login',loginstate);
+    document.getElementById("loginTab").style.display = "";
+    document.getElementById("infoTab").style.display = "none";
     location.reload();
 }
 
@@ -167,14 +175,17 @@ function onDelete(td) {
 }
 
 function moveLogin(){
-    
+    document.getElementById("loginTab").style.display = "";
+    document.getElementById("regiTab").style.display = "none";
 }
 
 function moveRegister(){
-    
+    document.getElementById("loginTab").style.display = "none";
+    document.getElementById("regiTab").style.display = "";
 }
 
 function onAdmin(){
+    document.getElementById("listTab").style.display = "";
     insertTable();
     editstate=true
 }
