@@ -1,18 +1,21 @@
 var selectedRow = null;
-var editstate = true; //관리자 목록회원수정-true, 회원정보수정-false / 추후 로그인기능 추가후 기본값 false
+var editstate = false; //관리자 목록회원수정-true, 회원정보수정-false 
 var localStorage = window.localStorage;
 var sessionStorage = window.sessionStorage;
-var loginstate = null;
+var loginstate = -1;
 var member = []; //회원 배열, 헷갈림 주의!
+loginstate = sessionStorage.getItem('login');//로그인 상태 세션에서 불러오기
+
 if(localStorage.length>0){ //로컬스토리지에 저장된 배열이 있으면 불러오기
     member = JSON.parse(localStorage.getItem('member')); 
 }
-if(sessionStorage.length>0){
-    loginstate = sessionStorage.getItem('login');
+
+if(loginstate>=0){
+    console.log(loginstate+"자동로그인 실행됨")
+    moveInfo(); //이게 왜 오류가 나냐고 계속 왜
 }
-if(loginstate!=null){
-   // moveInfo(); //이게 왜 오류가 나냐고 계속 왜
-}
+insertTable();
+console.log("아아")
 
 function onLoginSubmit() {
     var form = document.loginform;
@@ -47,10 +50,11 @@ function moveInfo(){
     form.username.value=member[loginstate]['username'];
     form.userphone.value=member[loginstate]['userphone'];
     form.userdate.value=member[loginstate]['userdate'];
+    editstate=true
 }
 
 function logout(){
-    loginstate=null;
+    loginstate=-1;
     sessionStorage.setItem('login',loginstate);
 }
 
@@ -137,7 +141,13 @@ function onInfoSubmit() {
         localStorage.setItem('member', JSON.stringify(member)); //로컬스토리지에 member배열 저장
         insertTable();
     }else{
-        // 자기정보 수정기능
+        member[loginstate]['userid'] = formData.userid;
+        member[loginstate]['userpw'] = formData.userpw;
+        member[loginstate]['username'] = formData.username;
+        member[loginstate]['userphone'] = formData.userphone;
+        member[loginstate]['userdate'] = formData.userdate;
+        localStorage.setItem('member', JSON.stringify(member)); //로컬스토리지에 member배열 저장
+        insertTable();
     }
 
 }
@@ -164,4 +174,5 @@ function moveRegister(){
 
 function onAdmin(){
     insertTable();
+    editstate=true
 }
