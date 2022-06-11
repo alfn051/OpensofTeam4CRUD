@@ -11,7 +11,7 @@
 <body>
     <h2 align="center">쇼핑몰 회원 관리를 위한 CRUD 프로젝트</h2>
 <!--로그인 창-->
-    <div class="loginTab" id="loginTab">
+    <div class="loginTab" id="loginTab" >
         <form onsubmit="event.preventDefault();onLoginSubmit();" name="loginform" id="loginform">
         <fieldset>
             <legend align="center">회원 로그인</legend>
@@ -35,7 +35,7 @@
         </form>
     </div>
 <!--회원가입 창-->
-    <div class="regiTab" id="regiTab">
+    <div class="regiTab" id="regiTab" >
         <form onsubmit="event.preventDefault();onRegiSubmit();">
         <fieldset>
             <legend align="center">회원 가입</legend>
@@ -67,7 +67,7 @@
         </form>
     </div>
 <!--회원 본인 정보 창-->
-    <div class="infoTab" id="infoTab">
+    <div class="infoTab" id="infoTab" >
         <form name="infoform" id="infoform" onsubmit="event.preventDefault();onInfoSubmit();">
         <fieldset>
             <legend align="center"><label id="infostate">회원 정보(일반사용자)</label></legend>
@@ -100,7 +100,7 @@
         <button onclick="logout()">로그아웃</button><button onclick="onAdmin()">관리자모드 전환</button>
     </div>
 <!--관리자 회원목록 창-->   
-    <div class="listTab" id="listTab">
+    <div class="listTab" id="listTab" >
         <fieldset>
             <legend align="center">회원 관리 목록(admin)</legend>
             <table class="list" id="adminList">

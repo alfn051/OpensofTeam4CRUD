@@ -51,7 +51,7 @@ function moveInfo(){
     form.username.value=member[loginstate]['username'];
     form.userphone.value=member[loginstate]['userphone'];
     form.userdate.value=member[loginstate]['userdate'];
-    editstate=true
+    editstate=false;
 }
 
 function logout(){
@@ -167,11 +167,11 @@ function onDelete(td) {
 }
 
 function moveLogin(){
-
+    
 }
 
 function moveRegister(){
-
+    
 }
 
 function onAdmin(){
