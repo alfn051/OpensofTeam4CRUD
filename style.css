@@ -19,7 +19,7 @@ table {
     margin-right: auto;
 }
 
-button, #form-action-buttons, #login_button, #tdregis, #regisub{
+button, a, #form-action-buttons, #login_button, #tdregis, #regisub{
     cursor: pointer;
 }
 #regicans, #regiregi, #newdate, #userdate{
