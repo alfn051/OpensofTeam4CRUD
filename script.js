@@ -74,8 +74,20 @@ function logout(){
 
 function onRegiSubmit() {
     var formData = readRegiData();
-    insertNewRecord(formData);
-    location.reload();
+    console.log(formData);
+    loop1:
+    while(true){
+        for(var i = 0; i<member.length; i++){
+            if(member[i]['userid'] == formData['userid']){
+                alert("이미 존재하는 아이디 입니다.")
+                break loop1;
+            }
+        } 
+        insertNewRecord(formData);
+        location.reload();
+        break;
+    }
+    
 }
 
 function readRegiData() {
