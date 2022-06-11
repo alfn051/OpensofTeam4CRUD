@@ -6,6 +6,13 @@ html {
 background-size: cover;
 
 }
+header {
+    background-color: rgba(36, 36, 36, 0.7);
+}
+hr {
+    border-top: 1px solid #363636;
+    border-bottom: 1px solid rgba(17, 17, 17, 0.3);
+}
 
 body {
     text-align: center;
@@ -39,7 +46,7 @@ border-radius: 5px;
 }
 
 fieldset {
-    background-color: rgba(169, 169, 169, 0.7);
+    background-color: rgba(77, 77, 77, 0.7);
     border-radius: 5px;
     width: 40%;
     margin-left: auto;
@@ -80,6 +87,6 @@ table, td, th {
     margin: auto;
 }
 h2 {
-    width: 1080px;
+    width: auto;
     margin: auto;
 }
